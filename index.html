@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add("js")</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remind Coffee | Kedai Kopi di Maguwoharjo, Sleman</title>
+<link rel="icon" id="favicon" href="data:,">
+<meta name="description" content="Remind Coffee, kedai kopi di Maguwoharjo, Sleman, Yogyakarta. Menu kopi dan non-kopi, buka setiap hari 07.00 - 23.00 WIB.">
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+<style>
+:root{--espresso:#2b1a12;--brown:#6f4e37;--caramel:#b07a4a;--latte:#d9bc9a;--cream:#f7f0e6;--sand:#ecdfcd;--ink:#3b2a20}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:'Nunito',sans-serif;color:var(--ink);background:#fffaf4;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:'Fraunces',serif;color:var(--espresso)}
+a{color:var(--brown)}
+section{padding:84px 0}
+.alt{background:var(--cream)}
+.eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--caramel);margin-bottom:8px}
+.sec-title{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:700;margin-bottom:10px}
+.sec-sub{color:#7a6556;max-width:620px;margin:0 auto 40px}
+.btn-brown{background:var(--brown);color:#fff;border:0;border-radius:999px;padding:11px 26px;font-weight:700;transition:.2s}
+.btn-brown:hover{background:var(--espresso);color:#fff}
+.btn-line{border:2px solid var(--brown);color:var(--brown);border-radius:999px;padding:9px 24px;font-weight:700;background:transparent;transition:.2s}
+.btn-line:hover{background:var(--brown);color:#fff}
+
+/* Header atas + menu layar penuh */
+:root{--tan:#c9a27b}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:1030;height:66px;background:var(--tan);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 clamp(16px,6vw,84px);box-shadow:0 2px 14px rgba(43,26,18,.12)}
+.tb-left{display:flex;gap:18px}
+.tb-left a{color:#fff;font-size:1.25rem;line-height:1;text-decoration:none;opacity:.95}
+.tb-left a:hover{opacity:1;transform:translateY(-1px)}
+.tb-right{justify-self:end;display:flex;align-items:center;gap:10px}
+.lang-sw{display:flex;border:1.5px solid rgba(255,255,255,.85);border-radius:999px;overflow:hidden}
+.lang-sw button{border:0;background:transparent;color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.06em;padding:5px 11px;cursor:pointer}
+.lang-sw button.on{background:#fff;color:var(--brown)}
+.navbar-brand{display:flex;align-items:center;text-decoration:none;font-family:'Fraunces',serif;font-weight:700;color:#fff!important;font-size:1.2rem}
+.navbar-brand img{height:48px;width:48px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.9);background:#fff}
+.navbar-brand img~.brand-text{display:none}
+.tb-burger{width:44px;height:44px;border:0;background:transparent;padding:9px 8px;cursor:pointer}
+.tb-burger span{display:block;height:2px;width:28px;background:#fff;margin:6px auto;border-radius:2px}
+.menu-ov{position:fixed;inset:0;z-index:2000;background:#fffaf4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:90px 20px 30px;overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+.menu-ov.open{opacity:1;visibility:visible}
+.mo-logo{position:absolute;top:14px;left:50%;transform:translateX(-50%);height:60px;width:60px;border-radius:50%;object-fit:cover;border:2px solid var(--tan);background:#fff}
+.mo-close{position:absolute;top:20px;right:clamp(16px,6vw,84px);width:44px;height:44px;border:0;background:transparent;color:var(--espresso);font-size:1.5rem;cursor:pointer}
+.mo-nav{display:flex;flex-direction:column;align-items:center;gap:6px;margin:auto 0 0}
+.mo-nav a{position:relative;display:inline-block;padding:10px 0;font-family:'Nunito',sans-serif;font-weight:400;font-size:clamp(1.35rem,4.2vw,1.8rem);letter-spacing:.04em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.mo-nav a::after{content:"";position:absolute;left:-20px;right:-20px;top:50%;height:3px;background:var(--tan);transform:scaleX(0);transition:transform .25s}
+.mo-nav a:hover::after,.mo-nav a.active::after{transform:scaleX(1)}
+.mo-order{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:26px 0 auto}
+.mo-order a{display:inline-flex;align-items:center;gap:6px;padding:7px 18px;border-radius:999px;border:1.5px solid var(--tan);color:var(--brown);font-weight:700;font-size:.88rem;text-decoration:none}
+.mo-order a:hover{background:var(--brown);border-color:var(--brown);color:#fff}
+
+/* Hero */
+#beranda{padding:70px 0 60px;background:radial-gradient(circle at 85% 10%,#f0e0cb 0,transparent 55%),#fffaf4}
+.hero-tag{display:inline-block;padding:6px 16px;border-radius:999px;background:var(--sand);color:var(--brown);font-weight:700;font-size:.85rem;margin-bottom:18px}
+#beranda h1{font-size:clamp(2.3rem,5vw,3.8rem);font-weight:700;line-height:1.15;margin-bottom:18px}
+#beranda h1 em{color:var(--caramel);font-style:italic}
+.hero-lead{font-size:1.1rem;color:#6a5444;max-width:520px}
+.hero-photo{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/3.4;background:linear-gradient(135deg,var(--brown),var(--espresso));display:grid;place-items:center;color:var(--latte);font-size:5rem;box-shadow:0 24px 50px rgba(43,26,18,.25)}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-badge{position:absolute;left:-14px;bottom:26px;background:#fff;border-radius:16px;padding:12px 18px;box-shadow:0 10px 30px rgba(43,26,18,.18);font-weight:700;color:var(--brown);display:flex;gap:10px;align-items:center;z-index:2}
+.hero-wrap{position:relative}
+
+/* Angka */
+.stat-strip{background:var(--espresso);color:#fff;border-radius:22px;padding:28px 10px;margin-top:-34px;position:relative;z-index:3}
+.stat-strip .n{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:700;color:var(--latte);line-height:1.1}
+.stat-strip small{color:#e6d3bf;letter-spacing:.04em}
+
+/* Sejarah */
+.tl{list-style:none;padding:0 0 0 22px;border-left:3px solid var(--latte);margin:0}
+.tl li{position:relative;padding:0 0 18px 18px}
+.tl li::before{content:"";position:absolute;left:-31px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--caramel);border:3px solid #fffaf4}
+
+/* Struktur */
+.org{max-width:980px;margin:0 auto;text-align:center}
+.org-node{background:#fff;border:2px solid var(--brown);border-radius:18px;padding:18px 20px;height:100%;box-shadow:0 8px 22px rgba(43,26,18,.07)}
+.org-node h4{font-size:1.2rem;margin:0 0 6px;color:var(--brown)}
+.org-node p{margin:0 0 10px;font-size:.92rem;color:#6a5444}
+.org-node.owner{max-width:330px;margin:0 auto;background:var(--brown)}
+.org-node.owner h4,.org-node.owner p{color:#fff}
+.org-v{width:3px;height:30px;background:var(--brown);margin:0 auto}
+.org-row{position:relative;padding-top:30px}
+.org-row::before{content:"";position:absolute;top:0;left:16.6%;right:16.6%;height:3px;background:var(--brown)}
+.org-row>div{position:relative}
+.org-row>div::before{content:"";position:absolute;top:-30px;left:50%;width:3px;height:30px;background:var(--brown)}
+.shift{display:inline-block;margin:2px;padding:3px 12px;border-radius:999px;background:var(--sand);color:var(--brown);font-weight:700;font-size:.78rem}
+@media(max-width:767px){.org-row::before,.org-row>div::before{display:none}.org-row{padding-top:16px}}
+
+/* Menu */
+.menu-filter{display:flex;justify-content:center;gap:8px;margin-bottom:28px;flex-wrap:wrap}
+.menu-filter button{border:0;background:#fff;color:var(--brown);font-weight:700;padding:9px 22px;border-radius:999px;box-shadow:0 4px 14px rgba(43,26,18,.08);transition:.2s}
+.menu-filter button.active,.menu-filter button:hover{background:var(--brown);color:#fff}
+.m-card{background:#fff;border-radius:18px;overflow:hidden;height:100%;border:1px solid var(--sand);box-shadow:0 8px 22px rgba(43,26,18,.06);transition:transform .25s,box-shadow .25s}
+.m-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(43,26,18,.16)}
+.m-img{position:relative;aspect-ratio:1/1;background:linear-gradient(135deg,var(--brown),var(--espresso));display:grid;place-items:center;color:var(--latte);font-size:3rem}
+.m-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.m-body{padding:14px 12px 16px;text-align:center}
+.m-body h4{font-size:1rem;font-weight:700;margin:0 0 10px}
+.pchips{display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
+.pchip{background:var(--sand);color:var(--brown);border-radius:999px;padding:2px 10px;font-size:.78rem;font-weight:600;white-space:nowrap}
+.menu-item.hide{display:none}
+
+/* Kutipan */
+.quote{background:var(--brown);color:#fff;text-align:center;padding:64px 0}
+.quote p{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.3rem,2.6vw,1.9rem);max-width:780px;margin:0 auto 10px}
+.quote small{letter-spacing:.2em;color:var(--latte)}
+
+/* Lokasi & sosmed */
+.map-frame{width:100%;height:380px;border:0;border-radius:20px}
+.contact-item{display:flex;gap:14px;margin-bottom:20px}
+.contact-item i{font-size:1.5rem;color:var(--caramel)}
+.contact-item h5{font-size:1rem;margin:0}
+.contact-item p{margin:0;color:#6a5444}
+.sosmed-card{background:#fff;border:1px solid var(--sand);border-radius:20px;padding:26px;text-align:center;height:100%}
+.sosmed-card i{font-size:2.6rem;color:var(--caramel)}
+.feed img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px}
+
+footer{background:var(--espresso);color:#e6d3bf;padding:56px 0 22px}
+footer h5{color:var(--latte);font-size:1.05rem}
+footer a{color:#e6d3bf;text-decoration:none}
+footer a:hover{color:#fff}
+.f-social a{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);margin-right:8px;font-size:1.1rem}
+.f-social a:hover{background:var(--caramel)}
+.f-order{display:flex;flex-wrap:wrap;gap:8px}
+.f-order a{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.3);font-weight:600;font-size:.9rem}
+.f-order a:hover{background:var(--caramel);border-color:var(--caramel);color:#fff}
+.dropdown-menu{border:0;border-radius:14px;box-shadow:0 12px 30px rgba(43,26,18,.18);padding:8px}
+.dropdown-item{border-radius:8px;font-weight:600;color:var(--ink)}
+.dropdown-item:hover{background:var(--sand);color:var(--brown)}
+.m-card{cursor:pointer}
+.m-card:focus-visible{outline:3px solid var(--caramel);outline-offset:2px}
+.modal-content{border:0;border-radius:24px;overflow:hidden;background:#fffaf4}
+.mm-img{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,var(--brown),var(--espresso));display:grid;place-items:center;color:var(--latte);font-size:4rem}
+.mm-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.btn-close-x{position:absolute;top:14px;right:14px;z-index:5;width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,250,244,.92);color:var(--espresso);display:grid;place-items:center;font-size:1rem}
+.btn-close-x:hover{background:#fff}
+.mm-body{padding:24px 28px 28px}
+.mm-cat{display:inline-block;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--caramel)}
+.mm-body h3{font-size:1.8rem;margin:4px 0 14px}
+.mm-prices{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.mm-price{background:var(--sand);border-radius:12px;padding:8px 14px;line-height:1.3}
+.mm-price small{display:block;color:#7a6556;font-weight:600;font-size:.72rem;letter-spacing:.04em}
+.mm-price b{font-family:'Fraunces',serif;color:var(--brown);font-size:1.15rem}
+.mm-body p{color:#6a5444;margin-bottom:20px}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;font-weight:800;letter-spacing:.04em;border-radius:999px;padding:12px 26px;text-decoration:none;text-transform:uppercase;font-size:.88rem}
+.btn-wa:hover{background:#1ebe5b;color:#fff}
+.mm-alt{margin-top:16px;font-size:.9rem;color:#7a6556}
+.mm-alt a{font-weight:700;margin-left:10px}
+.tree-wrap{overflow-x:auto;padding-bottom:8px}
+.tree{min-width:760px}
+.tree ul{display:flex;justify-content:center;list-style:none;margin:0;padding:24px 0 0;position:relative}
+.tree>ul{padding-top:0}
+.tree li{position:relative;padding:24px 10px 0;text-align:center}
+.tree>ul>li{padding-top:0}
+.tree li::before,.tree li::after{content:"";position:absolute;top:0;right:50%;width:50%;height:24px;border-top:3px solid var(--brown)}
+.tree li::after{right:auto;left:50%;border-left:3px solid var(--brown)}
+.tree li:only-child::before,.tree li:only-child::after{display:none}
+.tree li:only-child{padding-top:0}
+.tree li:first-child::before,.tree li:last-child::after{border:0}
+.tree li:last-child::before{border-right:3px solid var(--brown)}
+.tree ul ul::before{content:"";position:absolute;top:0;left:50%;border-left:3px solid var(--brown);height:24px}
+.tree li:only-child>.t-node{margin-top:0}
+.t-node{display:inline-block;min-width:130px;padding:11px 22px;border:2px solid var(--brown);border-radius:12px;background:#fff;color:var(--brown);font-weight:700;box-shadow:0 6px 16px rgba(43,26,18,.07)}
+.t-node.root{background:var(--brown);color:#fff;font-size:1.1rem;padding:13px 34px}
+.t-node.sm{background:var(--sand);border-color:var(--latte);font-size:.88rem;font-weight:600;min-width:120px}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:32px;padding-top:18px;font-size:.88rem;text-align:center}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.m-card{transition:none}}
+
+/* Slider produk */
+.m-slider{position:relative}
+.m-viewport{overflow:hidden;margin:0 -12px;padding:10px 0 14px;touch-action:pan-y}
+.m-track{display:flex;transition:transform .5s ease;--pv:3}
+.m-track .menu-item{flex:0 0 calc(100% / var(--pv));padding:0 12px;box-sizing:border-box}
+.m-arrow{position:absolute;top:calc(50% - 44px);z-index:4;width:42px;height:42px;border:0;border-radius:50%;background:#fff;color:var(--brown);box-shadow:0 6px 18px rgba(43,26,18,.2);display:grid;place-items:center;transition:.2s}
+.m-arrow:hover:not(:disabled){background:var(--brown);color:#fff}
+.m-arrow:disabled{opacity:.35;cursor:default}
+.m-arrow.prev{left:-14px}.m-arrow.next{right:-14px}
+.m-dots{display:flex;justify-content:center;gap:10px;margin-top:10px}
+.m-dots button{width:10px;height:10px;padding:0;border:0;border-radius:50%;background:var(--latte);opacity:.5;transition:.2s}
+.m-dots button.on{background:var(--caramel);opacity:1;transform:scale(1.25)}
+@media(max-width:991px){.m-arrow.prev{left:-6px}.m-arrow.next{right:-6px}}
+@media(prefers-reduced-motion:reduce){.m-track{transition:none}}
+
+/* Animasi dan interaksi */
+.js .rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.l{transform:translateX(-40px)}
+.js .rv.r{transform:translateX(40px)}
+.js .rv.in{opacity:1;transform:none}
+.topbar{transition:height .3s ease,box-shadow .3s}
+.topbar.scrolled{height:56px;box-shadow:0 6px 22px rgba(43,26,18,.22)}
+.navbar-brand img{transition:transform .7s ease,height .3s,width .3s}
+.navbar-brand:hover img{transform:rotate(360deg)}
+.topbar.scrolled .navbar-brand img{height:40px;width:40px}
+.pgb{position:absolute;left:0;bottom:0;height:3px;width:0;background:#fff;opacity:.9}
+.hero-photo{transition:transform .25s ease;will-change:transform}
+.hero-badge{animation:floaty 4s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.btn-brown,.btn-line{transition:transform .2s,background .2s,box-shadow .2s}
+.btn-brown:hover,.btn-line:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(43,26,18,.22)}
+.m-img img{transition:transform .6s ease}
+.m-card:hover .m-img img{transform:scale(1.09)}
+.t-node{transition:transform .25s,background .25s,color .25s}
+.t-node:hover{transform:translateY(-4px) scale(1.05);background:var(--brown);color:#fff}
+.tl li::before{transition:transform .25s}
+.tl li:hover::before{transform:scale(1.5)}
+.contact-item i{transition:transform .3s}
+.contact-item:hover i{transform:scale(1.2) rotate(-8deg)}
+.mo-order a{transition:transform .2s,background .2s}
+.mo-order a:hover{transform:translateY(-2px)}
+.mo-nav a,.mo-order{opacity:0;transform:translateY(18px)}
+.menu-ov.open .mo-nav a,.menu-ov.open .mo-order{animation:moIn .5s ease forwards}
+.menu-ov.open .mo-nav a:nth-child(1){animation-delay:.08s}
+.menu-ov.open .mo-nav a:nth-child(2){animation-delay:.14s}
+.menu-ov.open .mo-nav a:nth-child(3){animation-delay:.20s}
+.menu-ov.open .mo-nav a:nth-child(4){animation-delay:.26s}
+.menu-ov.open .mo-nav a:nth-child(5){animation-delay:.32s}
+.menu-ov.open .mo-order{animation-delay:.42s}
+@keyframes moIn{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .js .rv{opacity:1;transform:none;transition:none}
+  .hero-badge{animation:none}
+  .mo-nav a,.mo-order{opacity:1;transform:none}
+  .menu-ov.open .mo-nav a,.menu-ov.open .mo-order{animation:none}
+  .navbar-brand:hover img{transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="tb-left">
+    <a href="https://www.instagram.com/remindcoffee168" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+    <a href="https://www.tiktok.com/@remindcoffee168" target="_blank" rel="noopener" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+    <a href="https://facebook.com/remindcoffee" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+  </div>
+  <a class="navbar-brand" href="#beranda" aria-label="Remind Coffee"><img data-base="LOGO REMIND|logo-remind|remind-logo|logo_remind" alt="Logo Remind Coffee"><span class="brand-text">Remind Coffee</span></a>
+  <div class="tb-right"><div class="lang-sw" role="group" aria-label="Language"><button type="button" data-lang="id" class="on">ID</button><button type="button" data-lang="en">EN</button></div>
+  <button type="button" class="tb-burger" id="navOpen" aria-label="Buka menu" aria-expanded="false" aria-controls="menuOv"><span></span><span></span><span></span></button></div>
+  <div class="pgb" id="pgb"></div>
+</header>
+
+<div class="menu-ov" id="menuOv" aria-hidden="true">
+  <button type="button" class="mo-close" id="navClose" aria-label="Tutup menu"><i class="bi bi-x-lg"></i></button>
+  <img class="mo-logo" data-base="LOGO REMIND|logo-remind|remind-logo|logo_remind" alt="">
+  <nav class="mo-nav" aria-label="Menu utama">
+    <a href="#beranda">Beranda</a>
+    <a href="#sejarah">Sejarah</a>
+    <a href="#struktur">Struktur</a>
+    <a href="#menu">Produk</a>
+    <a href="#lokasi">Lokasi</a>
+  </nav>
+  <div class="mo-order">
+    <a data-order="whatsapp" href="#" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+    <a data-order="grabfood" href="#" target="_blank" rel="noopener">GrabFood</a>
+    <a data-order="gofood" href="#" target="_blank" rel="noopener">GoFood</a>
+    <a data-order="shopeefood" href="#" target="_blank" rel="noopener">ShopeeFood</a>
+  </div>
+</div>
+
+<main>
+
+<!-- 1. Beranda -->
+<section id="beranda" style="padding-top:120px">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6">
+        <h1>Seduh Pelan,<br><em>Nikmati Momennya</em></h1>
+        <p class="hero-lead">Dari espresso pekat sampai teh lychee yang segar, Remind Coffee menemani harimu di Maguwoharjo, Sleman. Buka setiap hari dari pagi sampai malam.</p>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-wrap">
+          <div class="hero-photo"><i class="bi bi-cup-hot"></i><img data-base="TAMPAK DEPAN 2|Tampak Depan 2|TAMPAK DEPAN" data-hide alt="Tampak depan Remind Coffee"></div>
+          <div class="hero-badge"><i class="bi bi-clock fs-4"></i><span>07.00 - 23.00 WIB<br><small class="fw-normal">Setiap hari</small></span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 2. Sejarah / detail usaha -->
+<section id="sejarah" class="alt">
+  <div class="container">
+    <div class="row gy-5 align-items-center">
+      <div class="col-lg-7">
+        <span class="eyebrow">Sejarah dan Profil</span>
+        <h2 class="sec-title">Cerita di Balik Remind Coffee</h2>
+        <p>Remind Coffee mulai beroperasi pada Juni 2026 di Maguwoharjo, Kecamatan Depok, Kabupaten Sleman. Kedai ini hadir untuk orang-orang yang ingin berhenti sebentar dari rutinitas dan menikmati secangkir minuman yang dibuat dengan teliti.</p>
+        <p>Setiap pesanan dilayani oleh tim yang bekerja dalam dua shift, mulai dari kasir yang mencatat pesanan, barista yang meracik minuman, sampai staf gudang yang menjaga ketersediaan bahan baku.</p>
+      </div>
+      <div class="col-lg-5">
+        <ol class="tl">
+          <li><b>Juni 2026</b><br>Remind Coffee dibuka di Maguwoharjo, Sleman.</li>
+          <li><b>Setiap hari</b><br>Melayani pelanggan pukul 07.00 sampai 23.00 WIB.</li>
+          <li><b>Dua shift</b><br>Tim beranggotakan 7 orang bekerja bergantian.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Struktur perusahaan -->
+<section id="struktur">
+  <div class="container text-center">
+    <span class="eyebrow">Struktur Perusahaan</span>
+    <h2 class="sec-title">Struktur Organisasi</h2>
+    <p class="sec-sub">Susunan jabatan di Remind Coffee.</p>
+    <div class="tree-wrap">
+      <div class="tree">
+        <ul>
+          <li><span class="t-node root">Owner</span>
+            <ul>
+              <li><span class="t-node">Barista</span>
+                <ul><li><span class="t-node sm">Barista Shift 1</span></li><li><span class="t-node sm">Barista Shift 2</span></li></ul>
+              </li>
+              <li><span class="t-node">Kasir</span>
+                <ul><li><span class="t-node sm">Kasir Shift 1</span></li><li><span class="t-node sm">Kasir Shift 2</span></li></ul>
+              </li>
+              <li><span class="t-node">Staf Gudang</span>
+                <ul><li><span class="t-node sm">Staf Gudang Shift 1</span></li><li><span class="t-node sm">Staf Gudang Shift 2</span></li></ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Produk yang dijual -->
+<section id="menu" class="alt">
+  <div class="container text-center">
+    <span class="eyebrow">Produk yang Dijual</span>
+    <h2 class="sec-title">Pilih Minuman Favoritmu</h2>
+    <p class="sec-sub">Harga dalam ribu rupiah (K). HOT, ICE (Regular), dan ICE M (Medium).</p>
+    <div class="menu-filter">
+      <button type="button" class="active" data-f="all">Semua</button>
+      <button type="button" data-f="coffee">Coffee</button>
+      <button type="button" data-f="non">Non-Coffee</button>
+    </div>
+    <div class="m-slider"><button type="button" class="m-arrow prev" id="mPrev" aria-label="Sebelumnya"><i class="bi bi-chevron-left"></i></button><div class="m-viewport"><div class="m-track" id="mTrack">
+        <div class="menu-item" data-cat="coffee"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Double Shot Espresso" data-name="Double Shot Espresso" data-cat="Coffee" data-img="Double Shot Espresso|Espresso Double Shot" data-hot="10K" data-reg="-" data-med="-" data-desc="Dua takaran espresso murni yang pekat dan kuat, dengan lapisan crema tipis di atasnya. Cocok untuk yang suka rasa kopi apa adanya."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Double Shot Espresso|Espresso Double Shot" alt="Double Shot Espresso"></div><div class="m-body"><h4>Double Shot Espresso</h4><div class="pchips"><span class="pchip"><b>HOT</b> 10K</span></div></div></div></div>
+      <div class="menu-item" data-cat="coffee"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Americano" data-name="Americano" data-cat="Coffee" data-img="Americano" data-hot="10K" data-reg="10K" data-med="13K" data-desc="Espresso yang dipadukan dengan air, menghasilkan kopi hitam yang ringan, tegas, dan menyegarkan."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Americano" alt="Americano"></div><div class="m-body"><h4>Americano</h4><div class="pchips"><span class="pchip"><b>HOT</b> 10K</span><span class="pchip"><b>ICE</b> 10K</span><span class="pchip"><b>ICE M</b> 13K</span></div></div></div></div>
+      <div class="menu-item" data-cat="coffee"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Kopi Susu Gula Aren" data-name="Kopi Susu Gula Aren" data-cat="Coffee" data-img="Kopi Susu" data-hot="-" data-reg="15K" data-med="18K" data-desc="Kopi dan susu dengan manis gula aren yang lembut. Pilihan klasik untuk segala suasana."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Kopi Susu" alt="Kopi Susu Gula Aren"></div><div class="m-body"><h4>Kopi Susu Gula Aren</h4><div class="pchips"><span class="pchip"><b>ICE</b> 15K</span><span class="pchip"><b>ICE M</b> 18K</span></div></div></div></div>
+      <div class="menu-item" data-cat="coffee"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Kopi Susu Gula Kelapa" data-name="Kopi Susu Gula Kelapa" data-cat="Coffee" data-img="Kopi Susu" data-hot="-" data-reg="15K" data-med="18K" data-desc="Kopi susu dengan manis gula kelapa yang gurih dan harum."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Kopi Susu" alt="Kopi Susu Gula Kelapa"></div><div class="m-body"><h4>Kopi Susu Gula Kelapa</h4><div class="pchips"><span class="pchip"><b>ICE</b> 15K</span><span class="pchip"><b>ICE M</b> 18K</span></div></div></div></div>
+      <div class="menu-item" data-cat="coffee"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Kopi Susu Salted Caramel" data-name="Kopi Susu Salted Caramel" data-cat="Coffee" data-img="Kopi Susu" data-hot="-" data-reg="15K" data-med="18K" data-desc="Kopi susu dengan rasa karamel dan sedikit sentuhan asin yang membuat rasanya seimbang."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Kopi Susu" alt="Kopi Susu Salted Caramel"></div><div class="m-body"><h4>Kopi Susu Salted Caramel</h4><div class="pchips"><span class="pchip"><b>ICE</b> 15K</span><span class="pchip"><b>ICE M</b> 18K</span></div></div></div></div>
+      <div class="menu-item" data-cat="coffee"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Susu Kopi" data-name="Susu Kopi" data-cat="Coffee" data-img="Kopi Susu" data-hot="-" data-reg="15K" data-med="18K" data-desc="Susu yang creamy dengan sedikit kopi. Lebih ringan dan manis untuk yang tidak terlalu suka pahit."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Kopi Susu" alt="Susu Kopi"></div><div class="m-body"><h4>Susu Kopi</h4><div class="pchips"><span class="pchip"><b>ICE</b> 15K</span><span class="pchip"><b>ICE M</b> 18K</span></div></div></div></div>
+      <div class="menu-item" data-cat="coffee"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Caramel Latte" data-name="Caramel Latte" data-cat="Coffee" data-img="Caramel Latte" data-hot="17K" data-reg="17K" data-med="20K" data-desc="Latte dengan rasa karamel yang manis dan wangi."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Caramel Latte" alt="Caramel Latte"></div><div class="m-body"><h4>Caramel Latte</h4><div class="pchips"><span class="pchip"><b>HOT</b> 17K</span><span class="pchip"><b>ICE</b> 17K</span><span class="pchip"><b>ICE M</b> 20K</span></div></div></div></div>
+      <div class="menu-item" data-cat="coffee"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Hazelnut Latte" data-name="Hazelnut Latte" data-cat="Coffee" data-img="Hazelnut Latte" data-hot="17K" data-reg="17K" data-med="20K" data-desc="Latte beraroma kacang hazelnut yang gurih dan harum."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Hazelnut Latte" alt="Hazelnut Latte"></div><div class="m-body"><h4>Hazelnut Latte</h4><div class="pchips"><span class="pchip"><b>HOT</b> 17K</span><span class="pchip"><b>ICE</b> 17K</span><span class="pchip"><b>ICE M</b> 20K</span></div></div></div></div>
+      <div class="menu-item" data-cat="coffee"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Rum Latte" data-name="Rum Latte" data-cat="Coffee" data-img="Rum Latte" data-hot="17K" data-reg="17K" data-med="20K" data-desc="Latte dengan sirup beraroma rum yang manis dan hangat."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Rum Latte" alt="Rum Latte"></div><div class="m-body"><h4>Rum Latte</h4><div class="pchips"><span class="pchip"><b>HOT</b> 17K</span><span class="pchip"><b>ICE</b> 17K</span><span class="pchip"><b>ICE M</b> 20K</span></div></div></div></div>
+      <div class="menu-item" data-cat="coffee"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Aren Latte" data-name="Aren Latte" data-cat="Coffee" data-img="Aren Latte" data-hot="17K" data-reg="17K" data-med="20K" data-desc="Latte dengan gula aren. Manis legit berpadu dengan espresso dan susu."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Aren Latte" alt="Aren Latte"></div><div class="m-body"><h4>Aren Latte</h4><div class="pchips"><span class="pchip"><b>HOT</b> 17K</span><span class="pchip"><b>ICE</b> 17K</span><span class="pchip"><b>ICE M</b> 20K</span></div></div></div></div>
+      <div class="menu-item" data-cat="coffee"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Salted Caramel" data-name="Salted Caramel" data-cat="Coffee" data-img="Salted Caramel" data-hot="-" data-reg="20K" data-med="24K" data-desc="Minuman karamel dengan sentuhan garam, manis dan gurih berpadu."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Salted Caramel" alt="Salted Caramel"></div><div class="m-body"><h4>Salted Caramel</h4><div class="pchips"><span class="pchip"><b>ICE</b> 20K</span><span class="pchip"><b>ICE M</b> 24K</span></div></div></div></div>
+      <div class="menu-item" data-cat="non"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Taro" data-name="Taro" data-cat="Non-Coffee" data-img="TARO|Taro" data-hot="12K" data-reg="12K" data-med="15K" data-desc="Minuman susu rasa talas ungu yang manis, lembut, dan creamy."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="TARO|Taro" alt="Taro"></div><div class="m-body"><h4>Taro</h4><div class="pchips"><span class="pchip"><b>HOT</b> 12K</span><span class="pchip"><b>ICE</b> 12K</span><span class="pchip"><b>ICE M</b> 15K</span></div></div></div></div>
+      <div class="menu-item" data-cat="non"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Thai Tea" data-name="Thai Tea" data-cat="Non-Coffee" data-img="THAI TEA|Thai Tea" data-hot="-" data-reg="12K" data-med="15K" data-desc="Teh Thailand yang pekat berpadu dengan susu. Creamy dan manis."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="THAI TEA|Thai Tea" alt="Thai Tea"></div><div class="m-body"><h4>Thai Tea</h4><div class="pchips"><span class="pchip"><b>ICE</b> 12K</span><span class="pchip"><b>ICE M</b> 15K</span></div></div></div></div>
+      <div class="menu-item" data-cat="non"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Lychee Tea" data-name="Lychee Tea" data-cat="Non-Coffee" data-img="LYCHEA TEA|LYCHEE TEA|Lychee Tea" data-hot="-" data-reg="12K" data-med="15K" data-desc="Teh dingin dengan rasa leci yang manis dan wangi buah."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="LYCHEA TEA|LYCHEE TEA|Lychee Tea" alt="Lychee Tea"></div><div class="m-body"><h4>Lychee Tea</h4><div class="pchips"><span class="pchip"><b>ICE</b> 12K</span><span class="pchip"><b>ICE M</b> 15K</span></div></div></div></div>
+      <div class="menu-item" data-cat="non"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Lemon Tea" data-name="Lemon Tea" data-cat="Non-Coffee" data-img="Lemon Tea" data-hot="-" data-reg="12K" data-med="15K" data-desc="Teh dengan perasan lemon. Asam manisnya segar."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Lemon Tea" alt="Lemon Tea"></div><div class="m-body"><h4>Lemon Tea</h4><div class="pchips"><span class="pchip"><b>ICE</b> 12K</span><span class="pchip"><b>ICE M</b> 15K</span></div></div></div></div>
+      <div class="menu-item" data-cat="non"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Lychee Squash" data-name="Lychee Squash" data-cat="Non-Coffee" data-img="Leci Squash" data-hot="-" data-reg="12K" data-med="15K" data-desc="Minuman soda dengan rasa leci, manis dan dingin."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Leci Squash" alt="Lychee Squash"></div><div class="m-body"><h4>Lychee Squash</h4><div class="pchips"><span class="pchip"><b>ICE</b> 12K</span><span class="pchip"><b>ICE M</b> 15K</span></div></div></div></div>
+      <div class="menu-item" data-cat="non"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Lemon Squash" data-name="Lemon Squash" data-cat="Non-Coffee" data-img="Lemon Squash" data-hot="-" data-reg="12K" data-med="15K" data-desc="Perasan lemon dengan soda. Segar dan menghilangkan haus."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Lemon Squash" alt="Lemon Squash"></div><div class="m-body"><h4>Lemon Squash</h4><div class="pchips"><span class="pchip"><b>ICE</b> 12K</span><span class="pchip"><b>ICE M</b> 15K</span></div></div></div></div>
+      <div class="menu-item" data-cat="non"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Matcha" data-name="Matcha" data-cat="Non-Coffee" data-img="Matcha" data-hot="15K" data-reg="15K" data-med="18K" data-desc="Teh hijau matcha dengan susu. Rasa earthy dan manisnya seimbang."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Matcha" alt="Matcha"></div><div class="m-body"><h4>Matcha</h4><div class="pchips"><span class="pchip"><b>HOT</b> 15K</span><span class="pchip"><b>ICE</b> 15K</span><span class="pchip"><b>ICE M</b> 18K</span></div></div></div></div>
+      <div class="menu-item" data-cat="non"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Chocolate" data-name="Chocolate" data-cat="Non-Coffee" data-img="Chocolate" data-hot="15K" data-reg="15K" data-med="18K" data-desc="Cokelat dengan susu, manis pekat dan menenangkan."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Chocolate" alt="Chocolate"></div><div class="m-body"><h4>Chocolate</h4><div class="pchips"><span class="pchip"><b>HOT</b> 15K</span><span class="pchip"><b>ICE</b> 15K</span><span class="pchip"><b>ICE M</b> 18K</span></div></div></div></div>
+      <div class="menu-item" data-cat="non"><div class="m-card" role="button" tabindex="0" aria-label="Lihat detail Red Velvet" data-name="Red Velvet" data-cat="Non-Coffee" data-img="Red Velvet" data-hot="15K" data-reg="15K" data-med="18K" data-desc="Minuman red velvet yang manis, dengan rasa kakao ringan dan tekstur creamy."><div class="m-img"><i class="bi bi-cup-hot"></i><img data-base="Red Velvet" alt="Red Velvet"></div><div class="m-body"><h4>Red Velvet</h4><div class="pchips"><span class="pchip"><b>HOT</b> 15K</span><span class="pchip"><b>ICE</b> 15K</span><span class="pchip"><b>ICE M</b> 18K</span></div></div></div></div>
+    </div></div><button type="button" class="m-arrow next" id="mNext" aria-label="Berikutnya"><i class="bi bi-chevron-right"></i></button></div>
+    <div class="m-dots" id="mDots"></div>
+  </div>
+</section>
+
+<div class="quote">
+  <div class="container">
+    <p>"Kopi yang enak tidak cuma soal rasa, tapi tentang obrolan dan kenangan yang ikut tersimpan di dalamnya."</p>
+    <small>REMIND COFFEE, YOGYAKARTA</small>
+  </div>
+</div>
+
+<!-- 5. Maps / alamat -->
+<section id="lokasi">
+  <div class="container">
+    <div class="text-center">
+      <span class="eyebrow">Maps dan Alamat</span>
+      <h2 class="sec-title">Mampir ke Remind Coffee</h2>
+      <p class="sec-sub">Kedai kami ada di Maguwoharjo, Sleman.</p>
+    </div>
+    <div class="row gy-4 align-items-center">
+      <div class="col-lg-5">
+        <div class="contact-item"><i class="bi bi-geo-alt"></i><div><h5>Alamat</h5><p>Jl. Paingan, Krodan, Maguwoharjo, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</p></div></div>
+        <div class="contact-item"><i class="bi bi-clock"></i><div><h5>Jam Operasional</h5><p>Setiap hari, 07.00 - 23.00 WIB</p></div></div>
+        <a class="btn btn-brown" href="https://maps.app.goo.gl/RzojeEoy1KNjUa9Z9" target="_blank" rel="noopener"><i class="bi bi-map"></i> Buka di Google Maps</a>
+      </div>
+      <div class="col-lg-7">
+        <iframe class="map-frame" title="Peta lokasi Remind Coffee" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Remind+Coffee+Maguwoharjo+Sleman&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-5">
+        <h5>Remind Coffee</h5>
+        <p>Jl. Paingan, Krodan, Maguwoharjo, Kec. Depok, Kab. Sleman, DIY 55281<br>Buka setiap hari 07.00 - 23.00 WIB</p>
+      </div>
+      <div class="col-lg-3 col-6">
+        <h5>Navigasi</h5>
+        <a href="#beranda">Beranda</a><br><a href="#sejarah">Sejarah</a><br><a href="#struktur">Struktur</a><br><a href="#menu">Produk</a><br><a href="#lokasi">Lokasi</a>
+      </div>
+      <div class="col-lg-4 col-12">
+        <h5>Terhubung</h5>
+        <div class="f-social">
+          <a href="https://www.instagram.com/remindcoffee168" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.tiktok.com/@remindcoffee168" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><i class="bi bi-tiktok"></i></a>
+          <a href="https://facebook.com/remindcoffee" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://remindcoffee.id" target="_blank" rel="noopener" aria-label="Website asli Remind Coffee" title="Website asli"><i class="bi bi-globe2"></i></a>
+          <a href="https://maps.app.goo.gl/RzojeEoy1KNjUa9Z9" target="_blank" rel="noopener" aria-label="Google Maps" title="Google Maps"><i class="bi bi-geo-alt"></i></a>
+        </div>
+        <h5 class="mt-4">Pesan Lewat</h5>
+        <div class="f-order">
+          <a data-order="whatsapp" href="#" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+          <a data-order="grabfood" href="#" target="_blank" rel="noopener">GrabFood</a>
+          <a data-order="gofood" href="#" target="_blank" rel="noopener">GoFood</a>
+          <a data-order="shopeefood" href="#" target="_blank" rel="noopener">ShopeeFood</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">© 2026 Remind Coffee. Tugas Besar APSI 2026.</div>
+  </div>
+</footer>
+
+<!-- Detail menu -->
+<div class="modal fade" id="menuModal" tabindex="-1" aria-labelledby="mm-name" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="btn-close-x" data-bs-dismiss="modal" aria-label="Tutup"><i class="bi bi-x-lg"></i></button>
+      <div class="mm-img"><i class="bi bi-cup-hot"></i><img id="mm-img" alt="" style="display:none"></div>
+      <div class="mm-body">
+        <span class="mm-cat" id="mm-cat"></span>
+        <h3 id="mm-name"></h3>
+        <div class="mm-prices" id="mm-prices"></div>
+        <p id="mm-desc"></p>
+        <a id="mm-wa" class="btn-wa" href="#" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> Pesan via WhatsApp</a>
+        <div class="mm-alt">Atau lewat:
+          <a data-order="grabfood" href="#" target="_blank" rel="noopener">GrabFood</a>
+          <a data-order="gofood" href="#" target="_blank" rel="noopener">GoFood</a>
+          <a data-order="shopeefood" href="#" target="_blank" rel="noopener">ShopeeFood</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function(){
+  // ISI LINK TOKO DI SINI. Kosongkan ("#") jika belum ada.
+  var WA_NUM='6285600551895';
+  var lang='id';try{lang=localStorage.getItem('rc_lang')==='en'?'en':'id'}catch(e){}
+  // Template pesan WhatsApp (formulir singkat yang tinggal diisi pelanggan)
+  function waTpl(name,opts){
+    if(lang==='en'){
+      return 'Hello Remind Coffee, I would like to order:\n\n'
+        +'Menu: '+(name||'')+'\n'
+        +'Quantity: \n'
+        +'Size/Temp: '+(opts||'(choose: HOT / ICE / ICE M)')+'\n'
+        +'Notes (e.g. less sugar, no ice): \n\n'
+        +'Name: \n'
+        +'Type: (Dine in / Take away)\n\n'
+        +'Thank you.';
+    }
+    return 'Halo Remind Coffee, saya mau pesan:\n\n'
+      +'Menu: '+(name||'')+'\n'
+      +'Jumlah: \n'
+      +'Ukuran/Suhu: '+(opts||'(pilih: HOT / ICE / ICE M)')+'\n'
+      +'Catatan (misal less sugar, tanpa es): \n\n'
+      +'Nama: \n'
+      +'Tipe: (Dine in / Take away)\n\n'
+      +'Terima kasih.';
+  }
+  var ORDER_URL={
+    grabfood:'https://app.grab.com/s/im43So1j',
+    gofood:'https://gofood.link/a/TDruky1',
+    shopeefood:'https://shopee.co.id/universal-link/now-food/shop/23230369?deep_and_deferred=1&shareChannel=copy_info'
+  };
+  function setOrder(){
+    document.querySelectorAll('[data-order]').forEach(function(a){
+      var k=a.dataset.order;
+      a.href=k==='whatsapp'?'https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(waTpl()):(ORDER_URL[k]||'#');
+    });
+  }
+  setOrder();
+  // Muat gambar: coba folder assets/img/ dan assets/img/menu/, nama dengan spasi/huruf besar, dan beberapa ekstensi
+  var EX=['jpg','jpeg','png','webp','jfif','JPG','JPEG','PNG','svg'];
+  // Favicon tab berbentuk lingkaran (dipotong dari logo navbar)
+  function circleFavicon(src){
+    var f=document.getElementById('favicon');
+    f.href=src;
+    var i=new Image();
+    i.onload=function(){
+      try{
+        var c=document.createElement('canvas');c.width=c.height=64;
+        var x=c.getContext('2d');
+        x.beginPath();x.arc(32,32,32,0,Math.PI*2);x.closePath();x.clip();
+        var m=Math.min(i.width,i.height);
+        x.drawImage(i,(i.width-m)/2,(i.height-m)/2,m,m,0,0,64,64);
+        f.type='image/png';f.href=c.toDataURL('image/png');
+      }catch(e){f.href=src}
+    };
+    i.src=src;
+  }
+  function loadImg(im,bases,ok,fail){
+    var c=[];
+    ['assets/img/','assets/img/menu/'].forEach(function(d){
+      bases.split('|').forEach(function(b){EX.forEach(function(e){c.push(encodeURI(d+b+'.'+e))})});
+    });
+    var i=0;
+    im.onload=function(){if(ok)ok(im)};
+    im.onerror=function(){i++;if(i<c.length){im.src=c[i]}else{im.onerror=null;if(fail)fail(im)}};
+    im.src=c[0];
+  }
+  document.querySelectorAll('img[data-base]').forEach(function(im){
+    loadImg(im,im.dataset.base,function(){
+      // logo navbar juga dipakai sebagai favicon tab
+      if(im.closest('.navbar-brand')){circleFavicon(im.src)}
+    },function(){
+      var col=im.hasAttribute('data-feed')?im.closest('.col-6'):im;
+      col.remove();
+    });
+  });
+  // Filter menu + slider produk
+  var btns=document.querySelectorAll('.menu-filter button'),items=document.querySelectorAll('.menu-item');
+  var track=document.getElementById('mTrack'),dotsEl=document.getElementById('mDots'),prev=document.getElementById('mPrev'),next=document.getElementById('mNext');
+  var page=0,pages=1;
+  function perView(){return window.innerWidth>=992?3:2}
+  function render(){
+    var n=Array.prototype.filter.call(items,function(it){return !it.classList.contains('hide')}).length,pv=perView();
+    track.style.setProperty('--pv',pv);
+    pages=Math.max(1,Math.ceil(n/pv));
+    if(page>=pages)page=pages-1;
+    track.style.transform='translateX(-'+(page*100)+'%)';
+    dotsEl.innerHTML='';
+    for(var k=0;k<pages;k++){(function(k){
+      var d=document.createElement('button');d.type='button';d.setAttribute('aria-label','Slide '+(k+1));
+      if(k===page)d.className='on';
+      d.addEventListener('click',function(){page=k;render()});
+      dotsEl.appendChild(d);
+    })(k)}
+    dotsEl.style.display=pages>1?'':'none';
+    prev.disabled=page===0;next.disabled=page>=pages-1;
+  }
+  prev.addEventListener('click',function(){if(page>0){page--;render()}});
+  next.addEventListener('click',function(){if(page<pages-1){page++;render()}});
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.toggle('active',x===b)});
+    items.forEach(function(it){it.classList.toggle('hide',b.dataset.f!=='all'&&it.dataset.cat!==b.dataset.f)});
+    page=0;render();
+  })});
+  // geser dengan swipe di layar sentuh
+  var tx=null,vp=track.parentNode;
+  vp.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+  vp.addEventListener('touchend',function(e){
+    if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;tx=null;
+    if(dx<-50&&page<pages-1){page++;render()}else if(dx>50&&page>0){page--;render()}
+  },{passive:true});
+  window.addEventListener('resize',render);
+  render();
+  // Detail menu (modal)
+  var mEl=document.getElementById('menuModal'),modal=new bootstrap.Modal(mEl);
+  function rp(v){return 'Rp '+(parseInt(v,10)*1000).toLocaleString('id-ID')}
+  function openMenu(card){
+    var d=card.dataset,img=document.getElementById('mm-img');
+    document.getElementById('mm-cat').textContent=d.cat;
+    document.getElementById('mm-name').textContent=(lang==='en'&&T[d.name])||d.name;
+    document.getElementById('mm-desc').textContent=(lang==='en'&&DESC_EN[d.name])||d.desc;
+    var PL=lang==='en'?['Hot','Iced Regular','Iced Medium']:['Panas','Dingin Regular','Dingin Medium'];
+    var pr=[[PL[0],d.hot],[PL[1],d.reg],[PL[2],d.med]].filter(function(x){return x[1]!=='-'});
+    document.getElementById('mm-prices').innerHTML=pr.map(function(x){return '<div class="mm-price"><small>'+x[0]+'</small><b>'+rp(x[1])+'</b></div>'}).join('');
+    img.style.display='none';if(d.img){img.alt=d.name;loadImg(img,d.img,function(){img.style.display=''},function(){img.style.display='none'})}
+    var av=[];if(d.hot!=='-')av.push('HOT');if(d.reg!=='-')av.push('ICE');if(d.med!=='-')av.push('ICE M');
+    var wa='https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(waTpl(d.name,'('+(lang==='en'?'choose':'pilih')+': '+av.join(' / ')+')'));
+    document.getElementById('mm-wa').href=wa;
+    modal.show();
+  }
+  document.querySelectorAll('.m-card').forEach(function(c){
+    c.addEventListener('click',function(){openMenu(c)});
+    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openMenu(c)}});
+  });
+  // Menu layar penuh
+  var ov=document.getElementById('menuOv'),openB=document.getElementById('navOpen'),closeB=document.getElementById('navClose');
+  function setOv(o){
+    ov.classList.toggle('open',o);ov.setAttribute('aria-hidden',o?'false':'true');
+    openB.setAttribute('aria-expanded',o?'true':'false');document.body.style.overflow=o?'hidden':'';
+  }
+  openB.addEventListener('click',function(){setOv(true)});
+  closeB.addEventListener('click',function(){setOv(false)});
+  ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setOv(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setOv(false)});
+  // Tandai menu aktif sesuai bagian yang sedang dilihat
+  var spyIds=['beranda','sejarah','struktur','menu','lokasi'],spyLinks=ov.querySelectorAll('.mo-nav a');
+  function spy(){
+    var cur=spyIds[0];
+    spyIds.forEach(function(id){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=120)cur=id});
+    spyLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur)});
+  }
+  window.addEventListener('scroll',spy,{passive:true});spy();
+  // Ganti bahasa Indonesia / Inggris
+  var T={"Beranda": "Home", "Sejarah": "History", "Struktur": "Structure", "Produk": "Products", "Lokasi": "Location", "Sosial Media": "Social Media", "Seduh Pelan,": "Brew Slowly,", "Nikmati Momennya": "Savor the Moment", "Dari espresso pekat sampai teh lychee yang segar, Remind Coffee menemani harimu di Maguwoharjo, Sleman. Buka setiap hari dari pagi sampai malam.": "From bold espresso to refreshing lychee tea, Remind Coffee keeps you company in Maguwoharjo, Sleman. Open every day from morning till night.", "Setiap hari": "Every day", "Sejarah dan Profil": "History and Profile", "Cerita di Balik Remind Coffee": "The Story Behind Remind Coffee", "Remind Coffee mulai beroperasi pada Juni 2026 di Maguwoharjo, Kecamatan Depok, Kabupaten Sleman. Kedai ini hadir untuk orang-orang yang ingin berhenti sebentar dari rutinitas dan menikmati secangkir minuman yang dibuat dengan teliti.": "Remind Coffee began operating in June 2026 in Maguwoharjo, Depok District, Sleman Regency. The shop is here for people who want to pause from their routine and enjoy a carefully made cup.", "Setiap pesanan dilayani oleh tim yang bekerja dalam dua shift, mulai dari kasir yang mencatat pesanan, barista yang meracik minuman, sampai staf gudang yang menjaga ketersediaan bahan baku.": "Every order is served by a team working in two shifts, from the cashier who records orders and the barista who crafts the drinks to the warehouse staff who keep ingredients in stock.", "Juni 2026": "June 2026", "Remind Coffee dibuka di Maguwoharjo, Sleman.": "Remind Coffee opens in Maguwoharjo, Sleman.", "Melayani pelanggan pukul 07.00 sampai 23.00 WIB.": "Serving customers from 07.00 to 23.00 WIB.", "Dua shift": "Two shifts", "Tim beranggotakan 7 orang bekerja bergantian.": "A team of 7 people works in turns.", "Struktur Perusahaan": "Company Structure", "Struktur Organisasi": "Organization Structure", "Susunan jabatan di Remind Coffee.": "The positions at Remind Coffee.", "Kasir": "Cashier", "Staf Gudang": "Warehouse Staff", "Kasir Shift 1": "Cashier Shift 1", "Kasir Shift 2": "Cashier Shift 2", "Staf Gudang Shift 1": "Warehouse Staff Shift 1", "Staf Gudang Shift 2": "Warehouse Staff Shift 2", "Produk yang Dijual": "Our Products", "Pilih Minuman Favoritmu": "Pick Your Favorite Drink", "Harga dalam ribu rupiah (K). HOT, ICE (Regular), dan ICE M (Medium).": "Prices in thousand rupiah (K). HOT, ICE (Regular), and ICE M (Medium).", "Semua": "All", "Kopi Susu Gula Aren": "Palm Sugar Milk Coffee", "Kopi Susu Gula Kelapa": "Coconut Sugar Milk Coffee", "Kopi Susu Salted Caramel": "Salted Caramel Milk Coffee", "Susu Kopi": "Coffee Milk", "\"Kopi yang enak tidak cuma soal rasa, tapi tentang obrolan dan kenangan yang ikut tersimpan di dalamnya.\"": "\"Great coffee isn't only about taste, but about the conversations and memories that come with it.\"", "Maps dan Alamat": "Maps and Address", "Mampir ke Remind Coffee": "Drop By Remind Coffee", "Kedai kami ada di Maguwoharjo, Sleman.": "Our shop is in Maguwoharjo, Sleman.", "Alamat": "Address", "Jam Operasional": "Opening Hours", "Setiap hari, 07.00 - 23.00 WIB": "Every day, 07.00 - 23.00 WIB", "Buka di Google Maps": "Open in Google Maps", "Ikuti Cerita Kami": "Follow Our Story", "Ikuti Remind Coffee di Instagram, TikTok, dan Facebook.": "Follow Remind Coffee on Instagram, TikTok, and Facebook.", "Buka setiap hari 07.00 - 23.00 WIB": "Open every day 07.00 - 23.00 WIB", "Navigasi": "Navigation", "Terhubung": "Connect", "Pesan Lewat": "Order Via", "© 2026 Remind Coffee. Tugas Besar APSI 2026.": "© 2026 Remind Coffee. APSI Final Project 2026.", "Pesan via WhatsApp": "Order via WhatsApp", "Atau lewat:": "Or via:"};
+  var DESC_EN={"Double Shot Espresso": "Two shots of pure, bold espresso with a thin layer of crema on top. Perfect for those who like their coffee just as it is.", "Americano": "Espresso mixed with water, making a light, crisp, and refreshing black coffee.", "Kopi Susu Gula Aren": "Coffee and milk with the gentle sweetness of palm sugar. A classic choice for any occasion.", "Kopi Susu Gula Kelapa": "Milk coffee sweetened with coconut sugar, rich and fragrant.", "Kopi Susu Salted Caramel": "Milk coffee with caramel flavor and a touch of salt for a balanced taste.", "Susu Kopi": "Creamy milk with a little coffee. Lighter and sweeter for those who don't like it too bitter.", "Caramel Latte": "A latte with sweet, fragrant caramel flavor.", "Hazelnut Latte": "A latte with the rich, nutty aroma of hazelnut.", "Rum Latte": "A latte with sweet, warm rum-flavored syrup.", "Aren Latte": "A latte with palm sugar. Rich sweetness blended with espresso and milk.", "Salted Caramel": "A caramel drink with a touch of salt, sweet and savory in harmony.", "Taro": "A milk drink with purple taro flavor, sweet, smooth, and creamy.", "Thai Tea": "Strong Thai tea blended with milk. Creamy and sweet.", "Lychee Tea": "Iced tea with sweet lychee flavor and a fruity aroma.", "Lemon Tea": "Tea with squeezed lemon. Refreshing sweet and sour.", "Lychee Squash": "A soda drink with lychee flavor, sweet and cold.", "Lemon Squash": "Fresh lemon juice with soda. Crisp and thirst-quenching.", "Matcha": "Matcha green tea with milk. Earthy flavor with balanced sweetness.", "Chocolate": "Chocolate with milk, rich, sweet, and comforting.", "Red Velvet": "A sweet red velvet drink with light cocoa flavor and a creamy texture."};
+  var textNodes=[];
+  (function(){
+    var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+      var t=n.parentNode.nodeName;
+      return (t==='SCRIPT'||t==='STYLE'||!n.nodeValue.trim())?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT;
+    }});
+    while(w.nextNode()){var n=w.currentNode;n.__o=n.nodeValue;textNodes.push(n)}
+  })();
+  var langBtns=document.querySelectorAll('.lang-sw button');
+  function applyLang(l){
+    lang=l;
+    try{localStorage.setItem('rc_lang',l)}catch(e){}
+    document.documentElement.lang=l;
+    document.title=l==='en'?'Remind Coffee | Coffee Shop in Maguwoharjo, Sleman':'Remind Coffee | Kedai Kopi di Maguwoharjo, Sleman';
+    var md=document.querySelector('meta[name="description"]');
+    if(md)md.content=l==='en'?'Remind Coffee, a coffee shop in Maguwoharjo, Sleman, Yogyakarta. Coffee and non-coffee menu, open every day 07.00 - 23.00 WIB.':'Remind Coffee, kedai kopi di Maguwoharjo, Sleman, Yogyakarta. Menu kopi dan non-kopi, buka setiap hari 07.00 - 23.00 WIB.';
+    textNodes.forEach(function(n){
+      var o=n.__o,k=o.trim();
+      n.nodeValue=(l==='en'&&T[k])?o.replace(k,function(){return T[k]}):o;
+    });
+    langBtns.forEach(function(b){b.classList.toggle('on',b.dataset.lang===l)});
+    setOrder();
+    if(mEl.classList.contains('show'))modal.hide();
+  }
+  langBtns.forEach(function(b){b.addEventListener('click',function(){applyLang(b.dataset.lang)})});
+  applyLang(lang);
+  // ===== Animasi dan interaksi =====
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // 1. Muncul saat di-scroll
+  var RV=[['#beranda h1, .hero-lead','l'],['.hero-wrap','r'],['.eyebrow',''],['.sec-title',''],['.sec-sub',''],['.tl li',''],['.tree-wrap',''],['.menu-filter',''],['.m-slider',''],['.quote p',''],['.quote small',''],['.contact-item',''],['#lokasi .btn-brown',''],['.map-frame','r'],['footer .col-lg-5, footer .col-lg-3, footer .col-lg-4','']];
+  var rvEls=[];
+  RV.forEach(function(g){
+    document.querySelectorAll(g[0]).forEach(function(el,i){
+      el.classList.add('rv');if(g[1])el.classList.add(g[1]);
+      el.style.transitionDelay=((i%5)*110)+'ms';
+      rvEls.push(el);
+    });
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);
+        setTimeout(function(){e.target.style.transitionDelay=''},1200)}
+    })},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    rvEls.forEach(function(el){io.observe(el)});
+  }else{rvEls.forEach(function(el){el.classList.add('in')})}
+  // 2. Header mengecil dan progress bar
+  var tb=document.querySelector('.topbar'),pgb=document.getElementById('pgb');
+  function onScroll(){
+    var y=window.pageYOffset||document.documentElement.scrollTop,h=document.documentElement.scrollHeight-window.innerHeight;
+    tb.classList.toggle('scrolled',y>40);
+    pgb.style.width=(h>0?Math.min(100,y/h*100):0)+'%';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  // 3. Foto hero miring mengikuti kursor
+  var hp=document.querySelector('.hero-photo');
+  if(hp&&!reduce&&window.matchMedia('(hover: hover)').matches){
+    var hw=hp.parentNode;
+    hw.addEventListener('mousemove',function(e){
+      var r=hw.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      hp.style.transform='perspective(900px) rotateY('+(x*9)+'deg) rotateX('+(-y*9)+'deg)';
+    });
+    hw.addEventListener('mouseleave',function(){hp.style.transform=''});
+  }
+  // 4. Slider produk jalan sendiri (berhenti saat disentuh/di-hover)
+  if(!reduce){
+    var hold=false;
+    vp.addEventListener('mouseenter',function(){hold=true});
+    vp.addEventListener('mouseleave',function(){hold=false});
+    vp.addEventListener('touchstart',function(){hold=true},{passive:true});
+    vp.addEventListener('touchend',function(){setTimeout(function(){hold=false},4000)},{passive:true});
+    setInterval(function(){
+      if(hold||document.hidden||pages<2)return;
+      page=(page+1)%pages;render();
+    },5000);
+  }
+  // 5. Judul tab bergerak saat pindah tab
+  var tabTimer=null,tabToggle=false;
+  function baseTitle(){return lang==='en'?'Remind Coffee | Coffee Shop in Maguwoharjo, Sleman':'Remind Coffee | Kedai Kopi di Maguwoharjo, Sleman'}
+  document.addEventListener('visibilitychange',function(){
+    clearInterval(tabTimer);
+    if(document.hidden){
+      var a=lang==='en'?'\u2615 Come back for coffee!':'\u2615 Balik lagi ngopi yuk!',b='Remind Coffee \u2615';
+      document.title=a;tabToggle=false;
+      tabTimer=setInterval(function(){tabToggle=!tabToggle;document.title=tabToggle?b:a},1500);
+    }else{document.title=baseTitle()}
+  });
+})();
+</script>
+</body>
+</html>
